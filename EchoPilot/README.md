@@ -102,7 +102,7 @@ This is the most involved part, but you only have to do it once.
     1.  **Install Ollama:** Follow the instructions on the [official Ollama website](https://ollama.com/).
     2.  **Pull a Model:** We recommend Llama 3.
         ```bash
-        ollama pull llama3
+        ollama pull llama3.1
         ```
     3.  **Set the Code:** In `drone_agent.py`, make sure the `ChatOllama` line is active:
         ```python
@@ -124,20 +124,19 @@ This is the most involved part, but you only have to do it once.
 Running this project requires a specific startup sequence across multiple terminals.
 
 ### Step 1: Start the Core Services
-First, launch the necessary background services for ROS 2 communication and the simulation.
 
 
 * **Terminal #1: PX4 SITL Simulation**
     This command starts the drone simulation itself within Gazebo. The environment variables set the specific drone model and its starting position.
     ```bash
     cd ~/PX4-Autopilot
-    PX4_SYS_AUTOSTART=4002 PX4_GZ_MODEL_POSE="268.08,-128.22,3.86,0.00,0,-0.7" PX4_GZ_MODEL=x500_depth ./build/px4_sitl_default/bin/px4
+    make px4_sitl gz_x500
+
     ```
     Wait for the Gazebo window to appear and the PX4 console to finish its startup sequence.
     ``
 
 ### Step 2: Start the EchoPilot Agent
-This is the final step that brings everything together.
 
 * **Terminal #2: EchoPilot Agent**
     This runs the main voice-controlled agent. Make sure to activate your project's virtual environment first.
@@ -147,16 +146,16 @@ This is the final step that brings everything together.
     python3 drone_agent.py
     ```
 
-### Step 4: Give Your Command
+### Step 3: Give Your Command
 * The agent will initialize and greet you.
 * When prompted, speak your command clearly into your microphone.
-* Watch the agent generate the plan in Terminal #5 and monitor the drone's execution in Gazebo!
+* Watch the agent generate the plan in Terminal #3 and monitor the drone's execution in Gazebo!
 
 ---
 #### (Optional) Monitor with QGroundControl
 For a professional mission control dashboard, you can also run QGroundControl. It will automatically connect to the running simulation and give you a real-time map, telemetry, and a direct view into the drone's state.
 ```bash
-# In another terminal, from where you downloaded it:
+# In another terminal (3), from where you downloaded it:
 chmod +x ./QGroundControl.AppImage
 ./QGroundControl.AppImage
 ```
