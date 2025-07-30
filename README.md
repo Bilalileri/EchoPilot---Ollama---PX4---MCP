@@ -68,7 +68,7 @@ This is the most involved part, but you only have to do it once.
 
 1.  **Clone This Repository:**
     ```bash
-    git clone [https://github.com/your-username/EchoPilot.git](https://github.com/Bilalileri/EchoPilot.git)
+    git clone [https://github.com/Bilalileri/EchoPilot.git](https://github.com/Bilalileri/EchoPilot.git)
     cd EchoPilot
     ```
 
@@ -102,7 +102,7 @@ This is the most involved part, but you only have to do it once.
     1.  **Install Ollama:** Follow the instructions on the [official Ollama website](https://ollama.com/).
     2.  **Pull a Model:** We recommend Llama 3.
         ```bash
-        ollama pull llama3
+        ollama pull llama3.1
         ```
     3.  **Set the Code:** In `drone_agent.py`, make sure the `ChatOllama` line is active:
         ```python
@@ -116,7 +116,7 @@ This is the most involved part, but you only have to do it once.
     4.  In `drone_agent.py`, make sure the `init_chat_model` line is active:
         ```python
         LLM = init_chat_model("groq:llama3-8b-8192")
-        # LLM = ChatOllama(model="llama3")
+        # LLM = ChatOllama(model="llama3.1")
         ```
 ## ▶️ Running the Project
 
@@ -131,7 +131,7 @@ First, launch the necessary background services for ROS 2 communication and the 
     This command starts the drone simulation itself within Gazebo. The environment variables set the specific drone model and its starting position.
     ```bash
     cd ~/PX4-Autopilot
-    PX4_SYS_AUTOSTART=4002 PX4_GZ_MODEL_POSE="268.08,-128.22,3.86,0.00,0,-0.7" PX4_GZ_MODEL=x500_depth ./build/px4_sitl_default/bin/px4
+    make px4_sitl gz_x500
     ```
     Wait for the Gazebo window to appear and the PX4 console to finish its startup sequence.
     ``
