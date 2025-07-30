@@ -1,0 +1,22 @@
+# Core LangChain and Agent Logic
+langchain
+langgraph
+langchain-ollama
+langchain-groq
+python-dotenv
+
+# MCP for Tool Communication
+langchain-mcp-adapters
+mcp
+fastmcp
+
+# Drone Control
+mavsdk
+
+# Voice and Audio
+SpeechRecognition
+PyAudio
+pyttsx3
+
+# Utilities
+httpx
