@@ -4,7 +4,7 @@ Ever wanted to talk to your drone like you're in a sci-fi movie? EchoPilot makes
 
 At its core, EchoPilot uses a powerful, local Large Language Model (LLM) to automatically generate complex mission plans from a single voice command. Unlike solutions relying on external APIs, EchoPilot processes your commands right on your system, offering enhanced privacy and control. These plans are then executed by a robust set of tools running as a background service, communicating via the Model Context Protocol (MCP).
 
-[![Demo Video](https://img.youtube.com/vi/https://www.youtube.com/watch?v=-IVD1Tpn5w0&ab_channel=Bilal%C4%B0leri/0.jpg)](https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=-IVD1Tpn5w0&ab_channel=Bilal%C4%B0leri)
+https://www.youtube.com/watch?v=-IVD1Tpn5w0&ab_channel=Bilal%C4%B0leri
 
 ## ✨ Features
 
